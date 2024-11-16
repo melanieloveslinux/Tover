@@ -28,17 +28,15 @@ class tover():
 		self.root.configure(bg="#aaaaaa")
 		nextButton = tk.Button(self.root, text="Play", command=self.inGame)
 		nextButton.pack()
-	
-	# Game Stuff
 	def inGame(self):
 		for widget in self.root.winfo_children():
 			widget.destroy()
 		self.root.configure(bg="#bbbbbb")
-		
 		hoverLabel = tk.Label(self.root, text="Hover!")
-		hoverLabel.place(x=random.randint(1,500),y=random.randint(1,500))
-		hoverLabel.bind("<Enter>",self.print())
+		hoverLabel.bind("<Enter>",hoveredLabel(hoverLabel))
 
+
+		
 
 # Main
 root = tk.Tk()
